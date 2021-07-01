@@ -31,21 +31,17 @@ scissors = '''
 
 weapons = [rock, paper, scissors]
 
-computer_choice = weapons[random.randint(0, 2)]
+computer_choice = random.randint(0, 2)
 
-player_choice = weapons[int(input(
-    "Weapon of choice: 0 for rock, 1 for paper and 2 for scissors\nWhat will you choose: "))]
+player_choice = int(input(
+    "Weapon of choice: 0 for rock, 1 for paper and 2 for scissors\nWhat will you choose: "))
 
-print(f"Your choice:\n{player_choice}")
-print(f"Computer chose:\n{computer_choice}")
+print(f"Your choice:\n{weapons[player_choice]}")
+print(f"Computer chose:\n{weapons[computer_choice]}")
 
 if computer_choice == player_choice:
     print("That's a tie")
-elif player_choice == 0 and computer_choice == 2:
+elif computer_choice == 0 and player_choice == 1 or computer_choice == 1 and player_choice == 2 or computer_choice == 2 and player_choice == 0:
     print("You win!")
-elif computer_choice == 0 and player_choice == 2:
-    print("You lose")
-elif computer_choice > player_choice:
-    print("You lose")
-elif player_choice > computer_choice:
-    print("You win!")
+else:
+    print("Computer wins!")
