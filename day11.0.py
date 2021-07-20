@@ -38,7 +38,6 @@ def compare(user_score, dealer_score):
 
     if user_score > 21 and dealer_score > 21:
         return "You went over. You lose 😤"
-
     if user_score == dealer_score:
         return "Draw 🙃"
     elif dealer_score == 0:
