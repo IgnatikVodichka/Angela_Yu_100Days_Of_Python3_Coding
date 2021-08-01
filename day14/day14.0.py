@@ -30,11 +30,15 @@ def game():
 
         print(logo)
 
-        print(f"Compare A: {A['name']}, {A['description']}, from: {A['country']}")
+        print(
+            f"Compare A: {A['name']}, {A['description']}, from: {A['country']}"
+        )
 
         print(vs)
 
-        print(f"Against B: {B['name']}, {B['description']}, from: {B['country']}")
+        print(
+            f"Against B: {B['name']}, {B['description']}, from: {B['country']}"
+        )
 
         user_answer = input("Who has more followers? 'A' or 'B': ")
 
