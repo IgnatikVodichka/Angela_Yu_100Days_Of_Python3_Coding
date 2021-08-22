@@ -22,9 +22,13 @@ class MoneyMachine:
     def process_coins(self):
         """Returns the total calculated from coins inserted."""
         print("Please insert coins.")
-        for coin in self.COIN_VALUES:
-            self.money_received += int(input(f"How many {coin}?: ")) * self.COIN_VALUES[coin]
-        return self.money_received
+        try:
+            for coin in self.COIN_VALUES:
+                self.money_received += int(input(f"How many {coin}?: ")) * self.COIN_VALUES[coin]
+            return self.money_received
+        except ValueError:
+            print("Wrong input. Please try again.")
+            self.process_coins()
 
     def make_payment(self, cost):
         """Returns True when payment is accepted, or False if insufficient."""
