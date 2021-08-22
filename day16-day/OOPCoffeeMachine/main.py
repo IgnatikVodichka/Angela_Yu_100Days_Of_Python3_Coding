@@ -12,6 +12,8 @@ is_on = True
 while is_on:
     choice = input(f"​What would you like? {menu.get_items()}: ")
 
+    order = menu.find_drink(choice)
+
     if choice == "off":
         is_on = False
 
@@ -19,5 +21,6 @@ while is_on:
         machine.report()
         money_machine.report()
 
-    # elif machine.is_resource_sufficient(menu.find_drink(choice)) == True:
-    #     money_machine.make_payment()
+    elif machine.is_resource_sufficient(order):
+        if money_machine.make_payment(order.cost):
+            machine.make_coffee(order)
